@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
+  color: #212121;
+  line-height: 1.5;
+}
+/* Скидаємо стандартні маркери списку та налаштовуємо флекс-контейнер */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Робимо так, щоб на великих екранах було по 3 картки в ряд (мінус gap) */
+.gallery-item {
+  flex-basis: calc((100% - 40px) / 3);
+}
+
+/* Сховище для картинок, щоб вони були адаптивними і не ламали сітку */
+.gallery-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover; /* Картинка заповнює блок без деформації */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
