@@ -12,6 +12,7 @@ body {
   color: #212121;
   line-height: 1.5;
 }
+
 /* Скидаємо стандартні маркери списку та налаштовуємо флекс-контейнер */
 .gallery {
   display: flex;
@@ -20,6 +21,7 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
+  justify-content: center;
 }
 
 /* Робимо так, щоб на великих екранах було по 3 картки в ряд (мінус gap) */
@@ -27,11 +29,26 @@ body {
   flex-basis: calc((100% - 40px) / 3);
 }
 
+/* Блочне посилання для огортання картинки */
+.gallery-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
 /* Сховище для картинок, щоб вони були адаптивними і не ламали сітку */
-.gallery-img {
+.gallery-image {
   width: 100%;
   height: 250px;
   object-fit: cover; /* Картинка заповнює блок без деформації */
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Плавний ефект збільшення та курсор лупи при наведенні */
+.gallery-image:hover {
+  transform: scale(1.03);
+  cursor: zoom-in;
 }
